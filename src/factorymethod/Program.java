@@ -5,6 +5,10 @@ public class Program {
         DeveloperFactory developerFactory = createDeveloperBySpeciality("Java");
         Developer developer = developerFactory.creatDeveloper();
         developer.writeCode();
+
+        DeveloperFactory developerFactory1 = createDeveloperBySpeciality("php");
+        Developer developer1 = developerFactory1.creatDeveloper();
+        developer1.writeCode();
     }
 
     static DeveloperFactory createDeveloperBySpeciality(String speciality){
@@ -13,7 +17,7 @@ public class Program {
         }else if ((speciality.equalsIgnoreCase("cpp"))){
             return new CppDeveloperFactory();
         }else {
-            throw new RuntimeException(speciality + "is unknown");
+            throw new RuntimeException(speciality + " is unknown speciality");
         }
     }
 }
