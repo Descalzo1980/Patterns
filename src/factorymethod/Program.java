@@ -2,11 +2,18 @@ package factorymethod;
 
 public class Program {
     public static void main(String[] args) {
-        Developer developer = new JavaDeveloper();
+        DeveloperFactory developerFactory = createDeveloperBySpeciality("Java");
+        Developer developer = developerFactory.creatDeveloper();
         developer.writeCode();
-        Developer developer1 = new CppDeveloper();
-        developer1.writeCode();
+    }
 
-        /*и это тоже не слишком гибко*/
+    static DeveloperFactory createDeveloperBySpeciality(String speciality){
+        if(speciality.equalsIgnoreCase("java")){
+            return new JavaDeveloperFactory();
+        }else if ((speciality.equalsIgnoreCase("cpp"))){
+            return new CppDeveloperFactory();
+        }else {
+            throw new RuntimeException(speciality + "is unknown");
+        }
     }
 }
