@@ -2,11 +2,11 @@ package factorymethod;
 
 public class Program {
     public static void main(String[] args) {
-        JavaDeveloper javadeveloper = new JavaDeveloper();
-        javadeveloper.writeJavaCode();
-        CppDeveloper cppDeveloper = new CppDeveloper();
-        cppDeveloper.writeCppCode();
+        Developer developer = new JavaDeveloper();
+        developer.writeCode();
+        Developer developer1 = new CppDeveloper();
+        developer1.writeCode();
 
-        /*так себе метод*/
+        /*и это тоже не слишком гибко*/
     }
 }

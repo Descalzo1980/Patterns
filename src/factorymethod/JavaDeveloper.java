@@ -1,7 +1,8 @@
 package factorymethod;
 
-public class JavaDeveloper {
-    void writeJavaCode(){
-        System.out.println("Java developer write Java code");
+public class JavaDeveloper implements Developer {
+    @Override
+    public void writeCode() {
+        System.out.println("Java dev write Java code");
     }
 }
